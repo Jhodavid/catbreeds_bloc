@@ -1,0 +1,10 @@
+{
+  "@@locale": "es",
+  "app_name": "Cat Breeds",
+  "breeds_module": {
+    "default": "Módulo de razas"
+  },
+  "detail_module": {
+    "default" : "Módulo de detalle"
+  }
+}
