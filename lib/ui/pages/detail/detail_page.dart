@@ -1,10 +1,10 @@
-import 'package:catbreeds_bloc/ui/widgets/cat_image.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
+
+import 'package:catbreeds_bloc/ui/widgets/cat_image.dart';
 
 import 'package:catbreeds_bloc/device/language/app_localizations.dart';
-import 'package:flutter/services.dart';
-import 'package:go_router/go_router.dart';
 
 
 
@@ -46,7 +46,8 @@ class DetailPage extends StatelessWidget {
         child: Column(
           children: [
             CatImage(
-              height: height*0.5
+              height: height*0.5,
+              imageList: [],
             ),
             Container(
               color: Colors.red,

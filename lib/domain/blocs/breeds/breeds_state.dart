@@ -1,10 +1,24 @@
 part of 'breeds_bloc.dart';
 
-abstract class BreedsState extends Equatable {
-  const BreedsState();
-  
-  @override
-  List<Object> get props => [];
+class BreedsState {
+
+  final BreedsRequestStatesEnum requestStates;
+  final List<BreedEntity> breedList;
+
+  const BreedsState({
+    this.requestStates = BreedsRequestStatesEnum.none,
+    this.breedList = const []
+  });
+
+
+  BreedsState copyWith({
+    BreedsRequestStatesEnum? requestStates,
+    List<BreedEntity>? breedList,
+  }) => BreedsState(
+    requestStates: requestStates ?? this.requestStates,
+    breedList: breedList ?? this.breedList
+  );
+
 }
 
-class BreedsInitial extends BreedsState {}
+const initState = BreedsState();

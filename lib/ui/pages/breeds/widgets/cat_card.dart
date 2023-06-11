@@ -1,3 +1,4 @@
+import 'package:catbreeds_bloc/domain/entities/breed_entity.dart';
 import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
@@ -12,8 +13,13 @@ import 'package:catbreeds_bloc/device/language/app_localizations.dart';
 
 
 class CatCard extends StatelessWidget {
+
+  final BreedEntity breed;
   
-  const CatCard({super.key});
+  const CatCard({
+    super.key, 
+    required this.breed
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +42,7 @@ class CatCard extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: Text(
-                    'Nombre de la raza',//todo
+                    breed.name,
                     style: textStylesTheme.titleMedium,
                   ),
                 ),
@@ -51,7 +57,10 @@ class CatCard extends StatelessWidget {
               ],
             ),
 
-            const CatImage(height: 240),
+            CatImage(
+              height: 240,
+              imageList: breed.imagesUrls,
+            ),
 
             Container(
               height: 40,
@@ -68,7 +77,7 @@ class CatCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Colombia',//todo
+                      breed.origin,
                       style: textStylesTheme.titleSmall,
                     ),
                     const Spacer(),
@@ -77,7 +86,7 @@ class CatCard extends StatelessWidget {
                       style: textStylesTheme.titleSmall,
                     ),
                     Tooltip(
-                      message: localeStrings.intelligenceTooltipMessage(2),//todo
+                      message: localeStrings.intelligenceTooltipMessage(breed.intelligence),
                       decoration: BoxDecoration(
                         color: Theme.of(context).primaryColor,
                         borderRadius: BorderRadius.circular(5)
@@ -87,9 +96,9 @@ class CatCard extends StatelessWidget {
                         height: 35,
                         width: 35,
                         padding: const EdgeInsets.all(7),
-                        child: const CircularProgressIndicator(
+                        child: CircularProgressIndicator(
                           strokeWidth: 10,
-                          value: 2*0.2,//todo
+                          value: breed.intelligence*0.2,
                         ),
                       ),
                     )

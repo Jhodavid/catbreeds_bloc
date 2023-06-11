@@ -54,6 +54,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AppBloc, AppState>(
       builder: (context, state) {
+
+        BlocProvider.of<BreedsBloc>(context).getCatBreedsData();
         
         return MaterialApp.router(
           debugShowCheckedModeBanner: false,
