@@ -2,7 +2,12 @@
   "@@locale": "es",
   "app_name": "Cat Breeds",
   "breeds_module": {
-    "default": "Módulo de razas"
+    "default": "Módulo de razas",
+    "title": "Razas de gatos",
+    "search_input_hint": "Buscar una raza de gato",
+    "read_more": "Más información",
+    "intelligence": "Inteligencia",
+    "intelligence_tooltip_message": "[rate] de [total]"
   },
   "detail_module": {
     "default" : "Módulo de detalle"

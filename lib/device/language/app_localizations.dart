@@ -56,6 +56,16 @@ class BreedsModuleStrings {
   BreedsModuleStrings(this._localizedStrings);
 
   String get mDefault => _localizedStrings['default'];
+  String get title => _localizedStrings['title'];
+  String get searchInputHint => _localizedStrings['search_input_hint'];
+  String get readMore => _localizedStrings['read_more'];
+  String get intelligence => _localizedStrings['intelligence'];
+  String intelligenceTooltipMessage(int rate) {
+    String text = _localizedStrings['intelligence_tooltip_message'];
+    text = text.replaceAll('[rate]', rate.toString());
+    text = text.replaceAll('[total]', '5');
+    return text;
+  }
 
 }
 

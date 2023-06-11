@@ -2,7 +2,12 @@
   "@@locale": "es",
   "app_name": "Cat Breeds",
   "breeds_module": {
-    "default": "Breeds Module"
+    "default": "Breeds Module",
+    "title": "Cat breeds",
+    "search_input_hint": "Search for a cat breed",
+    "read_more": "Read More",
+    "intelligence": "Intelligence",
+    "intelligence_tooltip_message": "[rate] of [total]"
   },
   "detail_module": {
     "default" : "Detail Module"
