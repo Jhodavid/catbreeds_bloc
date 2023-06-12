@@ -3,12 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:rive/rive.dart';
 
 
-import 'package:catbreeds_bloc/device/language/app_localizations.dart';
+import 'package:catbreeds_bloc/device/localization/app_localizations.dart';
 
 
 class BreedsAppBar extends StatelessWidget {
 
-  const BreedsAppBar({super.key});
+  final String searchTextValue;
+  final void Function(String searchValue) onChangeSearch;
+
+  const BreedsAppBar({
+    super.key, 
+    required this.searchTextValue,
+    required this.onChangeSearch
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +60,10 @@ class BreedsAppBar extends StatelessWidget {
                     ),
                   ],
                 ),
-                _SearchInput()
+                _SearchInput(
+                  value: searchTextValue,
+                  onChangeSearch: onChangeSearch
+                )
               ],
             ),
           ),
@@ -69,6 +79,14 @@ class BreedsAppBar extends StatelessWidget {
 }
 
 class _SearchInput extends StatelessWidget {
+
+  final String value;
+  final void Function(String searchValue) onChangeSearch;
+
+  const _SearchInput({
+    required this.onChangeSearch, 
+    required this.value
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -89,11 +107,12 @@ class _SearchInput extends StatelessWidget {
           borderRadius: BorderRadius.circular(10)
         ),
         child: TextFormField(
+          initialValue: value,
           style: textStylesTheme.bodyLarge,
           decoration: InputDecoration(
             hintText: localeStrings.searchInputHint
           ),
-          cursorColor: Theme.of(context).primaryColor,
+          onChanged: onChangeSearch,
         )
       )
     );

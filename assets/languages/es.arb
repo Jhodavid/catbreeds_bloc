@@ -1,15 +1,46 @@
 {
   "@@locale": "es",
   "app_name": "Cat Breeds",
+  "no_iamge_found": "No se encontrarón imágenes.",
   "breeds_module": {
     "default": "Módulo de razas",
     "title": "Razas de gatos",
     "search_input_hint": "Buscar una raza de gato",
     "read_more": "Más información",
     "intelligence": "Inteligencia",
-    "intelligence_tooltip_message": "[rate] de [total]"
+    "intelligence_tooltip_message": "[rate] de [total]",
+    "search_cat_breeds": "Buscando razas de gatos...",
+    "network_error": "Error al consultar las razas de gatos, compruebe su conexión a internet. O, Haz alcanzado el límite de tarifa en The Cat Api, por favor aumente el nivel del paquete de su cuenta o espere un minuto.",
+    "no_result": "Sin resultados.",
+    "refresh": "Refresh"
   },
   "detail_module": {
-    "default" : "Módulo de detalle"
+    "default" : "Módulo de detalle",
+    "country_origin": "País de origen:",
+    "lifetime": "Tiempo de vida:",
+    "years": "años:",
+    "weight": "Peso:",
+    "characteristics_tooltip_message": "[rate] of [total]",
+    "characteristics_title": "Características",
+    "characteristic_adaptability": "Adaptabilidad",
+    "characteristic_affection_level": "Nivel de afecto",
+    "characteristic_child_friendly": "Apto para niños",
+    "characteristic_dog_friendly": "Admite perros",
+    "characteristic_energy_level": "Nivel de energía",
+    "characteristic_grooming": "Aseo",
+    "characteristic_health_issues": "Saludable",
+    "characteristic_intelligence": "Inteligencia",
+    "characteristic_shedding_level": "Nivel de desprendimiento",
+    "characteristic_social_needs": "Necesidades sociales",
+    "characteristic_stranger_friendly": "Amigable con los extraños",
+    "characteristic_vocalisation": "Vocalización",
+    "characteristic_experimental": "Experimental",
+    "characteristic_hairless": "Sin pelo",
+    "characteristic_natural": "Natural",
+    "characteristic_rare": "Raro",
+    "characteristic_rex": "Rex",
+    "characteristic_suppressed_tail": "Cola suprimida",
+    "characteristic_short_legs": "Piernas cortas",
+    "characteristic_hypoallergenic": "Hipoalergénico"
   }
 }

@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 
-import 'package:catbreeds_bloc/device/language/app_localizations.dart';
-import 'package:catbreeds_bloc/device/language/app_localizations_enum.dart';
+import 'package:catbreeds_bloc/device/localization/app_localizations.dart';
+import 'package:catbreeds_bloc/device/localization/app_localizations_enum.dart';
 
 
 

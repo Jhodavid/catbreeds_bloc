@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 
 import 'package:catbreeds_bloc/data/services/cat_api_dio_service.dart';
@@ -12,10 +13,9 @@ import 'package:catbreeds_bloc/data/utils/domain/environment.dart';
 
 import 'package:catbreeds_bloc/domain/blocs/app/app_bloc.dart';
 import 'package:catbreeds_bloc/domain/blocs/breeds/breeds_bloc.dart';
-import 'package:catbreeds_bloc/domain/blocs/detail/detail_bloc.dart';
 
-import 'package:catbreeds_bloc/device/language/app_localizations_enum.dart';
-import 'package:catbreeds_bloc/device/language/app_localizations_delegate.dart';
+import 'package:catbreeds_bloc/device/localization/app_localizations_enum.dart';
+import 'package:catbreeds_bloc/device/localization/app_localizations_delegate.dart';
 
 import 'package:catbreeds_bloc/ui/router/app_router.dart';
 import 'package:catbreeds_bloc/ui/themes/app_theme.dart';
@@ -25,7 +25,8 @@ import 'package:catbreeds_bloc/ui/themes/app_theme.dart';
 Future<void> main() async {
 
   await dotenv.load(fileName: '.env');
-  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
 
   final languageCode = PlatformDispatcher.instance.locale.languageCode;
   await const AppLocalizationsDelegate().load(Locale(languageCode));
@@ -38,7 +39,6 @@ Future<void> main() async {
       providers: [
         BlocProvider(create: (context) => AppBloc()),
         BlocProvider(create: (context) => BreedsBloc()),
-        BlocProvider(create: (context) => DetailBloc()),
       ],
       child: const MyApp(),
     )
@@ -52,6 +52,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
+    FlutterNativeSplash.remove();
+
     return BlocBuilder<AppBloc, AppState>(
       builder: (context, state) {
 

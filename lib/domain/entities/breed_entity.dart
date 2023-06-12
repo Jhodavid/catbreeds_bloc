@@ -99,13 +99,18 @@ class BreedEntity {
     id: id, 
     name: name,
     imagesUrls: imagesUrls ?? this.imagesUrls,
+    cfaUrl: cfaUrl,
+    vetstreetUrl: vetstreetUrl,
+    vcahospitalsUrl: vcahospitalsUrl,
     temperament: temperament, 
     origin: origin, 
     countryCodes: countryCodes, 
     countryCode: countryCode, 
     description: description, 
     lifeSpan: lifeSpan, 
-    indoor: indoor, 
+    indoor: indoor,
+    lap: lap,
+    altNames: altNames,
     adaptability: adaptability, 
     affectionLevel: affectionLevel, 
     childFriendly: childFriendly, 
@@ -123,12 +128,13 @@ class BreedEntity {
     natural: natural, 
     rare: rare, 
     rex: rex, 
-    suppressedTail: 
-    suppressedTail, 
-    shortLegs: 
-    shortLegs, 
-    hypoallergenic: 
-    hypoallergenic
+    suppressedTail: suppressedTail, 
+    shortLegs: shortLegs,
+    wikipediaUrl: wikipediaUrl,
+    hypoallergenic: hypoallergenic,
+    referenceImageId: referenceImageId,
+    catFriendly: catFriendly,
+    bidability: bidability
   );
 
   factory BreedEntity.fromJson(Map<String, dynamic> json) => BreedEntity(

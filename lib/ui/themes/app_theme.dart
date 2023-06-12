@@ -21,14 +21,6 @@ class AppTheme {
 
     return ThemeData(
       useMaterial3: true,
-      // colorScheme: isDarkMode 
-      // ? const ColorScheme.dark().copyWith(
-      //   primary: Colors.green,
-      // )
-      // : const ColorScheme.light().copyWith(
-      //   primary: Colors.green
-      // ),
-      // colorSchemeSeed: const Color(0xff1a2b63),
       primaryColor: _blueApp,
       secondaryHeaderColor: _greenLightApp,
       scaffoldBackgroundColor: const Color(0xFFE4E4E4),
@@ -36,9 +28,17 @@ class AppTheme {
         displaySmall: GoogleFonts.inter(
           color: _blueApp,
           fontWeight: FontWeight.bold,
-          fontSize: 28,
+          fontSize: 26,
         ),
         displayMedium: GoogleFonts.inter(
+          color: _blueApp,
+          fontWeight: FontWeight.bold,
+        ),
+        bodySmall: GoogleFonts.inter(
+          color: _blueApp,
+          fontWeight: FontWeight.bold,
+        ),
+        bodyMedium: GoogleFonts.inter(
           color: _blueApp,
           fontWeight: FontWeight.bold,
         ),
@@ -63,14 +63,18 @@ class AppTheme {
         hoverColor: _greenLightApp,
         focusColor: _blueApp,
       ),
-      textButtonTheme: TextButtonThemeData(
+      textButtonTheme: TextButtonThemeData(        
         style: TextButton.styleFrom(
-          backgroundColor: Colors.transparent,
           iconColor: _blueApp,
+          backgroundColor: Colors.transparent,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(5)
-          )
+          ),
         )
+      ),
+      textSelectionTheme: const TextSelectionThemeData(
+        cursorColor: _blueApp,
+        selectionHandleColor: _blueApp
       ),
       progressIndicatorTheme: const ProgressIndicatorThemeData(
         color: _greenLightApp,
@@ -82,6 +86,13 @@ class AppTheme {
           statusBarColor: Colors.transparent,
           statusBarIconBrightness: Brightness.dark
         ),        
+      ),
+      tooltipTheme: TooltipThemeData(
+        decoration: BoxDecoration(
+          color: _blueApp,
+          borderRadius: BorderRadius.circular(5)
+        ),
+        triggerMode: TooltipTriggerMode.tap
       )
     );
   } 

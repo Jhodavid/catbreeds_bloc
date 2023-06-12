@@ -8,7 +8,7 @@ class AppState extends Equatable {
     this.isDarkMode = false
   });
 
-
+  //todo: dont use
   AppState copyWith({
     bool? isDarkMode
   }) => AppState(

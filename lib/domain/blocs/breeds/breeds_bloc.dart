@@ -1,8 +1,11 @@
 import 'package:bloc/bloc.dart';
-import 'package:catbreeds_bloc/data/repositories/cat_repository.dart';
-import 'package:catbreeds_bloc/data/utils/enums/breeds_request_status_enum.dart';
+
 import 'package:equatable/equatable.dart';
 
+
+import 'package:catbreeds_bloc/data/repositories/cat_repository.dart';
+
+import 'package:catbreeds_bloc/data/utils/enums/breeds_request_status_enum.dart';
 
 import 'package:catbreeds_bloc/domain/entities/breed_entity.dart';
 import 'package:catbreeds_bloc/domain/entities/breed_image_entity.dart';
@@ -40,7 +43,7 @@ class BreedsBloc extends Bloc<BreedsEvent, BreedsState> {
 
     on<SetBreedsRequestStates>((event, emit) {
       emit(state.copyWith(
-        requestStates: event.state
+        requestState: event.state
       ));
     });
 
@@ -48,8 +51,8 @@ class BreedsBloc extends Bloc<BreedsEvent, BreedsState> {
   
 
   //For breeds data
-  late int countCallbacks;
-  late int maxCountCallbacks;
+  late int countGetImages;
+  late int maxCountGetImages;
 
   Future<void> getCatBreedsData() async {
     add(const SetBreedsRequestStates(BreedsRequestStatesEnum.loadingBreeds));
@@ -58,32 +61,38 @@ class BreedsBloc extends Bloc<BreedsEvent, BreedsState> {
 
     if(breedListData != null) {
       add(SetBreedLists(breedListData));
+      add(const SetBreedsRequestStates(BreedsRequestStatesEnum.loadingBreedsImages));
       
-      maxCountCallbacks = breedListData.length;
+      countGetImages = 0;
+      maxCountGetImages = breedListData.length;
+
       for (var breed in breedListData) {
-        getBreedImage(breed.id);
+        countGetImages++;
+        _getBreedImage(breed.id);
       }
 
       return;
     }
 
-    add(const SetBreedsRequestStates(BreedsRequestStatesEnum.error));
+    add(const SetBreedsRequestStates(BreedsRequestStatesEnum.errorInBreeds));
 
   }
 
-  Future<void> getBreedImage(String breedId) async {
+  Future<void> _getBreedImage(String breedId) async {
 
     final breedImages = await _catRepository.getCatBreedImages(breedId);
+
+    if(countGetImages >= maxCountGetImages) {
+      add(const SetBreedsRequestStates(BreedsRequestStatesEnum.complete));
+    }
 
     if(breedImages != null) {
       add(SetBreedImages(
         breedId: breedId, 
         breedImages: breedImages
       ));
-
       return;
     }
-
   }
 
 }

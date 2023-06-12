@@ -1,14 +1,15 @@
-import 'package:catbreeds_bloc/domain/entities/breed_entity.dart';
 import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
 
 
+import 'package:catbreeds_bloc/device/localization/app_localizations.dart';
+
+import 'package:catbreeds_bloc/domain/entities/breed_entity.dart';
+
 import 'package:catbreeds_bloc/ui/widgets/cat_image.dart';
 
 import 'package:catbreeds_bloc/ui/router/app_routes.dart';
-
-import 'package:catbreeds_bloc/device/language/app_localizations.dart';
 
 
 
@@ -52,13 +53,14 @@ class CatCard extends StatelessWidget {
                     localeStrings.readMore,
                     style: textStylesTheme.bodyMedium,
                   ),
-                  onPressed: () => context.push(AppRoutesEnum.detail.path)
+                  onPressed: () => context.push(AppRoutesEnum.detail.path, extra: breed)
                 )
               ],
             ),
 
-            CatImage(
+            CatImagesCarousel(
               height: 240,
+              fitImages: BoxFit.fitHeight,
               imageList: breed.imagesUrls,
             ),
 
@@ -87,11 +89,6 @@ class CatCard extends StatelessWidget {
                     ),
                     Tooltip(
                       message: localeStrings.intelligenceTooltipMessage(breed.intelligence),
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor,
-                        borderRadius: BorderRadius.circular(5)
-                      ),
-                      triggerMode: TooltipTriggerMode.tap,
                       child: Container(
                         height: 35,
                         width: 35,

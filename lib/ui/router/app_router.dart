@@ -1,6 +1,8 @@
 import 'package:go_router/go_router.dart';
 
 
+import 'package:catbreeds_bloc/domain/entities/breed_entity.dart';
+
 import 'package:catbreeds_bloc/ui/router/app_routes.dart';
 
 import 'package:catbreeds_bloc/ui/pages/breeds/breeds_page.dart';
@@ -17,7 +19,13 @@ final appRouter = GoRouter(
     ),
     GoRoute(
       path: AppRoutesEnum.detail.path,
-      builder: (context, state) => const DetailPage(),
+      builder: (context, state) {
+        final paramBreed = state.extra as BreedEntity;
+
+        return DetailPage(
+          breed: paramBreed,
+        );
+      }
     )
   ],
   redirect: (context, state) {

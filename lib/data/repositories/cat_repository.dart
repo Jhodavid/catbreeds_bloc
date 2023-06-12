@@ -1,9 +1,10 @@
-import 'package:catbreeds_bloc/domain/entities/breed_image_entity.dart';
 import 'package:flutter/foundation.dart';
 
 import 'package:catbreeds_bloc/data/services/cat_api_dio_service.dart';
 
+import 'package:catbreeds_bloc/domain/entities/breed_image_entity.dart';
 import 'package:catbreeds_bloc/domain/entities/breed_entity.dart';
+
 import 'package:catbreeds_bloc/domain/repositories/abstract_cat_repository.dart';
 
 

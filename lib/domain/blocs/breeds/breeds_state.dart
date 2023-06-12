@@ -2,20 +2,20 @@ part of 'breeds_bloc.dart';
 
 class BreedsState {
 
-  final BreedsRequestStatesEnum requestStates;
+  final BreedsRequestStatesEnum requestState;
   final List<BreedEntity> breedList;
 
   const BreedsState({
-    this.requestStates = BreedsRequestStatesEnum.none,
+    this.requestState = BreedsRequestStatesEnum.none,
     this.breedList = const []
   });
 
 
   BreedsState copyWith({
-    BreedsRequestStatesEnum? requestStates,
+    BreedsRequestStatesEnum? requestState,
     List<BreedEntity>? breedList,
   }) => BreedsState(
-    requestStates: requestStates ?? this.requestStates,
+    requestState: requestState ?? this.requestState,
     breedList: breedList ?? this.breedList
   );
 

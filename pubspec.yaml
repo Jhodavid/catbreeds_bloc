@@ -13,6 +13,7 @@ dependencies:
   bloc: ^8.1.2
   cached_network_image: ^3.2.3
   card_loading: ^0.3.0
+  carousel_slider: ^4.2.1
   cupertino_icons: ^1.0.2
   dio: ^5.2.0+1
   equatable: ^2.0.5
@@ -30,6 +31,7 @@ dependencies:
   go_router: ^8.0.1
   google_fonts: ^4.0.4
   rive: ^0.11.2
+  url_launcher: ^6.1.11
 
 dev_dependencies:
   flutter_lints: ^2.0.0
@@ -51,3 +53,15 @@ flutter:
     - assets/images/
     - assets/languages/
     - assets/animations/
+
+flutter_native_splash:
+  color: "#e8f8c8"
+  image: assets/app_icon.png
+  branding: assets/app_title.png
+
+  android_12:
+    color: "#e8f8c8"
+    image: assets/app_icon.png
+    branding: assets/app_title.png
+
+  fullscreen: true

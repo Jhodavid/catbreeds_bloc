@@ -1,15 +1,46 @@
 {
   "@@locale": "es",
   "app_name": "Cat Breeds",
+  "no_iamge_found": "No images found.",
   "breeds_module": {
     "default": "Breeds Module",
     "title": "Cat breeds",
     "search_input_hint": "Search for a cat breed",
     "read_more": "Read More",
     "intelligence": "Intelligence",
-    "intelligence_tooltip_message": "[rate] of [total]"
+    "intelligence_tooltip_message": "[rate] of [total]",
+    "search_cat_breeds": "Searching cat breeds...",
+    "network_error": "Error consulting cat breeds, check your internet connection. Or, you have hit the rate limit in The Cat Api, please increase your account package tier or wait a minute.",
+    "no_result": "No results.",
+    "refresh": "Refresh"
   },
   "detail_module": {
-    "default" : "Detail Module"
+    "default" : "Detail Module",
+    "country_origin": "Country of origin:",
+    "lifetime": "Lifetime:",
+    "years": "years",
+    "weight": "Weight:",
+    "characteristics_tooltip_message": "[rate] of [total]",
+    "characteristics_title": "Characteristics",
+    "characteristic_adaptability": "Adaptability",
+    "characteristic_affection_level": "Affection Level",
+    "characteristic_child_friendly": "Child Friendly",
+    "characteristic_dog_friendly": "Dog Friendly",
+    "characteristic_energy_level": "Energy Level",
+    "characteristic_grooming": "Grooming",
+    "characteristic_health_issues": "Health Issues",
+    "characteristic_intelligence": "Intelligence",
+    "characteristic_shedding_level": "Shedding Level",
+    "characteristic_social_needs": "Social Needs",
+    "characteristic_stranger_friendly": "Stranger Friendly",
+    "characteristic_vocalisation": "Vocalisation",
+    "characteristic_experimental": "Experimental",
+    "characteristic_hairless": "Hairless",
+    "characteristic_natural": "Natural",
+    "characteristic_rare": "Rare",
+    "characteristic_rex": "Rex",
+    "characteristic_suppressed_tail": "Suppressed Tail",
+    "characteristic_short_legs": "Short Legs",
+    "characteristic_hypoallergenic": "Hypoallergenic"
   }
 }
