@@ -1,6 +1,5 @@
 name: catbreeds_bloc
-description: A application for cats breeds information with Flutter and BloC
-  Pattern with Clean Architecture.
+description: A application for cats breeds information with Flutter and BloC Pattern with Clean Architecture.
 
 publish_to: 'none'
 

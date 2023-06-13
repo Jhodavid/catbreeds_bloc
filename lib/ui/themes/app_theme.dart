@@ -30,10 +30,6 @@ class AppTheme {
           fontWeight: FontWeight.bold,
           fontSize: 26,
         ),
-        displayMedium: GoogleFonts.inter(
-          color: _blueApp,
-          fontWeight: FontWeight.bold,
-        ),
         bodySmall: GoogleFonts.inter(
           color: _blueApp,
           fontWeight: FontWeight.bold,

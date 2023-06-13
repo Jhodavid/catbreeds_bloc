@@ -37,17 +37,11 @@ class _CatImagesCarouselState extends State<CatImagesCarousel> {
 
   @override
   Widget build(BuildContext context) {
+
     if (widget.imageList.isEmpty) {
-      return BlocBuilder<BreedsBloc, BreedsState>(
-        builder: (context, state) {
-          return Container(
-            padding: const EdgeInsets.symmetric(horizontal: 0),
-            height: widget.height,
-            child: ClipRRect(
-                borderRadius: BorderRadius.circular(1),
-                child: const CardLoading(height: 240)),
-          );
-        },
+      return SizedBox(
+        height: widget.height,
+        child: const CardLoading(height: 240),
       );
     }
 

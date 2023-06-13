@@ -36,7 +36,7 @@ class CatRepository extends AbstactCatRepository {
     try {
       
       final response = await CatApiDioService.catApiDio.get(
-        'https://api.thecatapi.com/v1/images/search?limit=3&breed_ids=$breedId'
+        '/images/search?limit=3&breed_ids=$breedId'
       );
 
       return List<BreedImagesEntity>.from(
