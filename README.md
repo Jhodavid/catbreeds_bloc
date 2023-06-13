@@ -17,11 +17,15 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Instrucciones
 
-1. Renombrar el archivo ".env.template" a ".env"
-2. Remplazar "API_KEY" por el api key de tu propiedad sin las comillas.
+1. Renombrar el archivo ".env.template" a ".env".
+2. Remplazar "API_KEY" por el api key de tu propiedad.
 
 ## A tener en cuenta
 
-- Se utilizó la versión de Flutter 3.10.4
-- No se realizaron pruebas en un dispositivo con iOS
-- Las pruebas se realizarón en un dispositivo con Android 13
+- Se utilizó la versión de Flutter 3.10.4.
+- No se realizaron pruebas en un dispositivos iOS.
+- Las pruebas se realizarón en un dispositivo con Android 13.
+
+## Posibles mejoras
+
+- The Cat Api solo está en ingles, así que podría estar bien usar una librería como google_translator para traducir el contenido de la Api con los servicios de Google Cloud Platform.
